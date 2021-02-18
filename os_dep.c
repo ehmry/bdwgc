@@ -1220,6 +1220,16 @@ GC_INNER size_t GC_page_size = 0;
     return (ptr_t)GC_get_main_symbian_stack_base();
   }
 # define GET_MAIN_STACKBASE_SPECIAL
+#elif defined(GENODE)
+  EXTERN_C_BEGIN
+  extern ptr_t GC_get_genode_stack_base(void);
+  EXTERN_C_END
+
+  ptr_t GC_get_main_stack_base(void)
+  {
+    return GC_get_genode_stack_base();
+  }
+# define GET_MAIN_STACKBASE_SPECIAL
 #elif !defined(AMIGA) && !defined(HAIKU) && !defined(OS2) \
       && !defined(MSWIN32) && !defined(MSWINCE) && !defined(CYGWIN32) \
       && !defined(GC_OPENBSD_THREADS) \

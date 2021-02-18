@@ -690,6 +690,22 @@ EXTERN_C_BEGIN
 #   define mach_type_known
 # endif
 
+# if defined(__GENODE__)
+#   define GENODE
+#   define OS_TYPE "GENODE"
+    extern int _parent_cap[];
+#   define DATASTART ((ptr_t)_parent_cap)
+#   define DYNAMIC_LOADING
+#   define USE_MMAP_ANON
+#   if defined(__i386__)
+#     define I386
+#   endif
+#   if defined(__amd64)
+#     define X86_64
+#   endif
+#   define mach_type_known
+# endif
+
 /* Feel free to add more clauses here */
 
 /* Or manually define the machine type here.  A machine type is         */

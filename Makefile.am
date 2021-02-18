@@ -217,6 +217,7 @@ EXTRA_DIST += tools/if_mach.c tools/if_not_there.c tools/setjmp_t.c \
     extra/pcr_interface.c extra/real_malloc.c \
     extra/Mac_files/datastart.c extra/Mac_files/dataend.c \
     extra/Mac_files/MacOS_config.h \
+    extra/genode.cc \
     include/private/msvc_dbg.h extra/msvc_dbg.c tools/callprocs.sh
 
 #

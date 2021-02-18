@@ -255,6 +255,9 @@ case "$THREADS" in
         AM_CFLAGS="$AM_CFLAGS -pthread"
         THREADDLLIBS="-lpthread -lrt"
         ;;
+      *-*-genode*)
+        THREADDLLIBS=""
+        ;;
       *)
         AS_IF([test x$default_threadlibs != xtrue],
               [ AC_MSG_ERROR(

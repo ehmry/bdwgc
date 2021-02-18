@@ -61,7 +61,7 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 0;
     && !(defined(LINUX) && defined(__ELF__)) \
     && !(defined(NETBSD) && defined(__ELF__)) \
     && !(defined(OPENBSD) && (defined(__ELF__) || defined(M68K))) \
-    && !defined(HAIKU) && !defined(HURD) && !defined(NACL) \
+    && !defined(HAIKU) && !defined(HURD) && !defined(NACL) && !defined(GENODE) \
     && !defined(CPPCHECK)
 # error We only know how to find data segments of dynamic libraries for above.
 # error Additional SVR4 variants might not be too hard to add.
